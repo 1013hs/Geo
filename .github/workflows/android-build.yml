@@ -22,16 +22,19 @@ jobs:
         distribution: 'temurin'
         cache: gradle
         
+    # 直接安装Gradle，不依赖wrapper
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
       with:
         gradle-version: 8.7
         
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+    # 生成local.properties避免警告
+    - name: Create local.properties
+      run: echo "sdk.dir=/usr/local/lib/android/sdk" > local.properties
       
+    # 使用系统Gradle直接构建（绕过wrapper）
     - name: Build Debug APK
-      run: ./gradlew assembleDebug --stacktrace
+      run: gradle assembleDebug --stacktrace
       
     - name: Upload Debug APK
       uses: actions/upload-artifact@v4
@@ -40,7 +43,7 @@ jobs:
         path: app/build/outputs/apk/debug/app-debug.apk
         
     - name: Build Release APK
-      run: ./gradlew assembleRelease --stacktrace
+      run: gradle assembleRelease --stacktrace
       
     - name: Upload Release APK
       uses: actions/upload-artifact@v4
