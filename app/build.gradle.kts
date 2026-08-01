@@ -3,17 +3,17 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
-    id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
     namespace = "com.geosurvey.toolbox"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.geosurvey.toolbox"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0.0-alpha"
 
@@ -98,10 +98,6 @@ dependencies {
     
     // Maps
     implementation("org.osmdroid:osmdroid-android:6.1.18")
-    implementation("com.github.MKergall:osmbonuspack:6.9.0")
-    
-    // JSON Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     
     // Permissions
     implementation("com.google.accompanist:accompanist-permissions:0.34.0")
