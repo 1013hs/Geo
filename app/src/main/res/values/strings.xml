@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">地质勘查工具箱</string>
+    <string name="tracking_notification_title">轨迹记录中</string>
+    <string name="tracking_notification_content">正在后台记录GPS轨迹数据...</string>
+    <string name="channel_name">轨迹记录服务</string>
+    <string name="channel_description">后台GPS轨迹记录通知通道</string>
+</resources>
