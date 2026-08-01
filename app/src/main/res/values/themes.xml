@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.GeoSurveyToolbox" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/glass_background</item>
+        <item name="android:navigationBarColor">@color/glass_background</item>
+        <item name="android:windowBackground">@color/glass_background</item>
+    </style>
+</resources>
